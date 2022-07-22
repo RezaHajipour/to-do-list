@@ -1,0 +1,440 @@
+@font-face {
+    font-family: 'Lobster';
+    src: url("fonts/Lobster-Regular.ttf");
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-rendering: optimizeLegibility;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #027368;
+    background-color: #d0dad3;
+    /* background-image: linear-gradient(90deg, rgb(207, 204, 27), rgb(197, 156, 20)); */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    /* margin-top: 1em; */
+    font-family: 'Lobster', sans-serif;
+    justify-content: center;
+    justify-items: center;
+    flex-wrap: nowrap;
+    font-size: 40px;
+    flex-direction: column;
+    background-image: url("pexels-miguel-á-padriñán-255379.jpg");
+    background-size: cover;
+    border-bottom: 3px solid rgb(128, 196, 139);
+}
+
+h1 {
+    text-shadow: 3px 3px 4px #777;
+}
+
+button {
+    border-radius: 1em;
+    outline: none;
+}
+
+.box-1 {
+    margin: 1em;
+    display: flex;
+    align-self: center;
+}
+
+.box-2 {
+    display: flex;
+    align-self: center;
+    size: 1em;
+    margin-bottom: 1em;
+}
+
+img {
+    height: 90px;
+    width: 90px;
+}
+
+.input {
+    display: flex;
+    min-height: 5vh;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
+
+form input, form button {
+    padding: 1.3rem;
+    /* background: rgb(255, 255, 255); */
+    border: none;
+    font-size: 16px;
+    margin: 2em;
+    border-radius: 1em;
+    box-shadow: 3px 3px 4px #777
+}
+
+form button {
+    cursor: pointer;
+    background: cornsilk;
+    color: #027368;
+    border-radius: 1em;
+    font-family: 'Lobster', sans-serif;
+}
+
+form button:hover {
+    background: rgb(128, 196, 139);
+    color: #027368;
+}
+
+form input {
+    /* border-bottom: 2px solid white; */
+    outline: none;
+    background: cornsilk;
+    color: #027368;
+    font-family: 'Lobster', sans-serif;
+    letter-spacing: 2px;
+
+}
+
+form input:hover {
+    background: rgb(128, 196, 139);
+    color: #027368;
+}
+
+/* ---footer----*/
+
+footer {
+    width: 100%;
+    display: flex;
+    background-color: #027368;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    height: 100px;
+    font-size: 1.5em;
+}
+
+.left-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-container {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.left-container a {
+    padding: 0.5em;
+    color: #000;
+}
+
+.right-container a {
+    padding: 0.5em;
+    color: #000;
+}
+
+footer i:hover {
+    transform: scale(2);
+}
+
+h2 {
+    font-size: 2em;
+    text-align: center;
+    margin: 2.7rem;
+    font-family: 'Lobster', sans-serif;
+    color: #027368;
+    letter-spacing: 3px;
+    text-shadow: 3px 3px 4px #777;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding-top: 2em;
+}
+
+.ongoing, .completed {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-bottom: 3rem;
+}
+
+.tasks-ongoing, .tasks-completed {
+    border-radius: 2.5%;
+    text-align: center;
+    font-size: 1em;
+    /* background: linear-gradient(#93c3be, #aca98e, #be9eba); */
+    /* box-shadow:0 0 2px 2px rgba(0, 0, 0, 0.5); */
+}
+
+/* animated border for to-do boxes START*/
+.gradient-border {
+    --borderWidth: 0.7vw;
+    background: #c2d4c8;
+    position: relative;
+    border-radius: var(--borderWidth);
+}
+
+.gradient-border:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    /* background: linear-gradient(60deg, #e0cebb, #ebc68b, #e28752, #e6ac40, #e4915a, #c7a356, #da903c, #a37e4e); */
+    /* background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82); */
+    background: linear-gradient(60deg, #027368, #6db5d1, #80c48b, #93B7A9, #C1CDC5);
+    border-radius: calc(2 * var(--borderWidth));
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+}
+
+@keyframes animatedgradient {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+/*MEDIA QUERIES TO-DO-LIST  */
+/* animated border for to-do boxes END*/
+@media only screen and (min-width: 0px) {
+    .main {
+        width: 90%;
+        height: auto;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media only screen and (min-width: 576px) {
+    .main {
+        width: 90%;
+        height: auto;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+    .main {
+        width: 80%;
+        height: auto;
+    }
+
+    h2 {
+        font-size: 6vw;
+    }
+
+    .tasks-ongoing, .tasks-completed {
+        font-size: 1em;
+    }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media only screen and  (min-width: 992px) {
+    .main {
+        width: 50%;
+        height: auto;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .tasks-ongoing, .tasks-completed {
+        font-size: 1em;
+    }
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media only screen and  (min-width: 1200px) {
+    .main {
+        width: 50%;
+        height: auto;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .tasks-ongoing, .tasks-completed {
+        font-size: 1.5em;
+    }
+}
+
+.tasks-completed ul, .tasks-ongoing ul {
+    counter-reset: index;
+    padding: 0;
+}
+
+.tasks-completed li, .tasks-ongoing li {
+    counter-increment: index;
+    display: flex;
+    align-items: center;
+    padding: 1em 0;
+    box-sizing: border-box;
+    border: 1px solid rgba(128, 196, 139);
+    border-radius: 1em;
+    margin: 1em;
+    background-color: #02736855;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.356);
+}
+
+.tasks-completed li::before, .tasks-ongoing li::before {
+    content: counters(index, ".", decimal-leading-zero);
+    font-size: 1.5em;
+    text-align: left;
+    font-weight: bold;
+    /* min-width: 3.125em; */
+    padding: 0 0.4em;
+    /* align-self: flex-start; */
+    background-color: #027368;
+    background-attachment: fixed;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Lobster', sans-serif;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    /* flex-wrap: nowrap; */
+    width: 570px;
+    max-height: 100px;
+}
+
+.task .task-check {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* margin-right: 0.5em; */
+    flex: 1;
+}
+
+.checkbox-big {
+    appearance: none;
+    /* background-color: #97c9d89f; */
+    border: 1px solid white;
+    padding: 0.5em;
+    border-radius: 3px;
+    display: inline-block;
+    position: relative;
+}
+
+.checkbox-big:checked:after {
+    content: '\2714';
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 3px;
+}
+
+.task .task-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-self: center;
+    /* margin-right: 3em; */
+    /* flex-basis: inherit; */
+    flex: 7;
+}
+
+.task .task-title span {
+    display: inline;
+    font-size: 1em;
+    font-weight: 300;
+    font-family: inherit;
+    /* overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; */
+    /* max-width:200px; */
+}
+
+
+.task .task-buttons {
+    display: flex;
+    flex: 4;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.task-buttons button {
+    display: block;
+    position: relative;
+    padding: 1em;
+    width: 80px;
+    letter-spacing: 0.5vh;
+    align-self: center;
+    color: #027368;
+    /* height: 20px; */
+    /* text-transform: uppercase; */
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Lobster', sans-serif;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.356);
+    border: none;
+}
+
+.task-buttons button:hover {
+    background-color: rgba(128, 196, 139);
+}
+
+.task-buttons button:first-child {
+    margin-right: 0.5em;
+}
+
+.task-buttons .delete {
+    background-color: #027368;
+    color: rgb(255, 255, 255);
+}
+
+footer i {
+    color: rgb(128, 196, 139)
+}
+
+
+
+
+
+
+
+
+
+
+
